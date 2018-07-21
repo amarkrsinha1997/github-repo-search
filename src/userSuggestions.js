@@ -13,14 +13,14 @@ const itemStyle={
 
 }
 const Suggestions = (props) => {
-  const options = props.results.map(result => (
+  const options = props.results ? props.results.map(result => (
     <div style={itemStyle} key={result.node_id}>
       <Link to={'/'+ result.login}>
         <img src={result.avatar_url} alt={'Profile-Pic'} height="100" />
       </Link>
     	<span style={{display:'block'}}>{result.login}</span>
     </div>
-  ))
+  )):''
   return <div>{options}</div>
 }
 
